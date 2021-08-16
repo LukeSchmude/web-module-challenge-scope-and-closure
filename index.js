@@ -28,11 +28,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  counter1 is locally scoped. Counter2 is globally scoped 
   
   2. Which of the two uses a closure? How can you tell?
+  counter1. Counter1 return count++ is the closure cause it has to reach up into count
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+counter1 would be best for wanting to use it more than once
+counter2 would be best for global use. The global variable needs to be accessed by other functions
+
 */
 
 // counter1 code
@@ -63,9 +68,14 @@ NOTE: This will be a callback function for the tasks below
 */
 
 
-function inning(/*Code Here*/){
-    /*Code Here*/
-}
+function inning(){
+    return Math.floor(Math.random() * Math.floor(3))
+    }
+
+console.log(inning);
+
+
+
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
@@ -82,9 +92,17 @@ Use the finalScore function below to do the following:
 }
 */ 
 //parameters inningcb, number
-function finalScore(/*code Here*/){
-  /*Code Here*/
+
+function finalScore(inningcb, number){
+  return {
+    Home: inningcb(),
+    Away: inningcb()
+  }
 }
+
+
+
+
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
@@ -93,8 +111,11 @@ Use the getInningScore() function below to do the following:
 
   // inningcb, 
   // returning an object with a score for home and away 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inningcb) {
+  return {
+    Home: inningcb(),
+    Away: inningcb()
+  }
 }
 
 
@@ -142,9 +163,21 @@ Use the scoreboard function below to do the following:
 
 // get inningscorecb, score cb, number
 // return an array
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inningScorecb, scorecb, number){
+  const finalScore = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for(let i = 0; i < 9; i++){
+    const currentScore = (inningScorecb, scorecb);
+    homeScore = homeScore + inningScorecb.Home;
+    awayScore = awayScore + inningScorecb.Away;
+    finalScore.push(`Home:${inningScorecb.Home} Away: ${inningScorecb.Away}`)
+  }
+  return finalScore;
 }
+
+
+
 
 
 
