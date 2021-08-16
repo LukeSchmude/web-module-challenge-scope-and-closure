@@ -58,7 +58,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 
 Edit the `ReadMe` file with your answers to the questions below.
 
-1. In your own words, define closure (1-2 sentences).
+1. In your own words, define closure (1-2 sentences). A closure is when a function is bundled together. Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,8 +80,12 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+console.log. It reaches up into the function to get information
+
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+no.  generally the bottom would change
+c. What is the lexical scope of `newRoll`? Math.random
 
 
 ### Task 3 - Stretch Goals
